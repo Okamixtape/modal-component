@@ -78,18 +78,18 @@ const Modal = _ref => {
     option = selectedModalOption[0];
   }
   if (shown) {
-    return /*#__PURE__*/_react.default.createElement("modal", {
+    return /*#__PURE__*/_react.default.createElement("dialog", {
       open: true,
-      className: "modal__bg",
+      className: "modal__background",
       id: "myModal"
     }, /*#__PURE__*/_react.default.createElement("div", {
       className: "modal",
       id: "modal"
     }, closeIcon ? /*#__PURE__*/_react.default.createElement("button", {
       onClick: () => handleShown(),
-      className: "modal__close-btn"
+      className: "modal__closeButton"
     }, "\u2716") : null, /*#__PURE__*/_react.default.createElement("img", {
-      className: "modal__img",
+      className: "modal__image",
       src: option.icon,
       alt: option.altText
     }), /*#__PURE__*/_react.default.createElement("p", {
@@ -99,7 +99,7 @@ const Modal = _ref => {
       className: 'modal__cta modal__cta--' + option.title
     }, option.cta) : null));
   } else {
-    return /*#__PURE__*/_react.default.createElement("modal", {
+    return /*#__PURE__*/_react.default.createElement("dialog", {
       open: false
     });
   }

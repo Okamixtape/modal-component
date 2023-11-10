@@ -2,7 +2,7 @@ body {
   font-family: 'Roboto', sans-serif;
 }
 
-.modal__bg {
+.modal__background {
   position: fixed;
   top: 0;
   left: 0;
@@ -20,7 +20,7 @@ body {
   background: transparent;
 }
 
-.modal__bg::after {
+.modal__background::after {
   content: '';
   z-index: 1;
   opacity: 0.9;
@@ -57,7 +57,7 @@ body {
   }
 }
 
-.modal__close-btn {
+.modal__closeButton {
   width: 30px;
   font-size: 20px;
   color: #c0c5cb;
@@ -69,16 +69,16 @@ body {
   transition: ease-in 0.2s;
 }
 
-.modal__close-btn:hover {
+.modal__closeButton:hover {
   color: #888b90;
 }
 
-.modal__close-btn:active {
+.modal__closeButton:active {
   transform: scale(0.75);
   color: #888b90;
 }
 
-.modal__img {
+.modal__image {
   width: 82px;
   margin-bottom: 15px;
 }

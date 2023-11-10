@@ -1,11 +1,11 @@
-// REACT
+// Importing useState and useEffect from React
 import React, { useState, useEffect } from 'react'
 
-// MEDIA
+// Importing necessary icons
 import validIcon from './valid.png'
 import errorIcon from './error.png'
 
-// CSS
+// And CSS file
 import './modal.css'
 
 /**
@@ -73,35 +73,31 @@ const Modal = ({
   if (allowCustomization) {
     option = modal
   } else {
-    let selectedModalOption = modalOptions.filter((i) => i.title === modal)
+    const selectedModalOption = modalOptions.filter((i) => i.title === modal)
     option = selectedModalOption[0]
   }
 
-  if (shown) {
-    return (
-      <modal open={true} className="modal__bg" id="myModal">
-        <div className="modal" id="modal">
-          {closeIcon ? (
-            <button onClick={() => handleShown()} className="modal__close-btn">
-              ✖
-            </button>
-          ) : null}
-          <img className="modal__img" src={option.icon} alt={option.altText} />
-          <p className="modal__body">{option.content}</p>
-          {button ? (
-            <button
-              onClick={() => handleShown()}
-              className={'modal__cta modal__cta--' + option.title}
-            >
-              {option.cta}
-            </button>
-          ) : null}
-        </div>
-      </modal>
-    )
-  } else {
-    return <modal open={false}></modal>
-  }
+  return shown ? (
+    <dialog open={true} className="modal__background" id="myModal">
+      <div className="modal" id="modal">
+        {closeIcon ? (
+          <button onClick={() => handleShown()} className="modal__closeButton">
+            ✖
+          </button>
+        ) : null}
+        <img className="modal__image" src={option.icon} alt={option.altText} />
+        <p className="modal__body">{option.content}</p>
+        {button ? (
+          <button
+            onClick={() => handleShown()}
+            className={'modal__cta modal__cta--' + option.title}
+          >
+            {option.cta}
+          </button>
+        ) : null}
+      </div>
+    </dialog>
+  ) : <dialog open={false} />;
 }
 
 export default Modal
